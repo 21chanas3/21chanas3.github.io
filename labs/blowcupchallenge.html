@@ -1,1 +1,49 @@
-
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <title>Mutinies Support</title>
+          <!--<link rel="icon" href="">-->
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+          <meta name="description" content="">
+          <meta name="keywords" content="">
+          <meta name="author" content="">
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+          <link rel="stylesheet" type="text/css" href="css/css-main.css">
+     </head>
+     <body>
+          <div class=navbar>
+               <ul>
+                    <li><a href="science.html">Science</a></li>
+               </ul> 
+          </div>
+          <div class=main>
+            <h1>Blow Cup Challenge</h1>
+            <h2>Introduction</h2>
+            <p>In this experiment, we will be attempting to find out what are the optimal conditions to perform the Blow Cup Challenge in. The Blow Cup Challenge involves three cups, a launch cup, projectile cup and a target cup. The aim is to get the projectile cup from the launch cup to the target cup, by blowing in space between the launch and projectile cup.</p>
+            <h2>Hypothesis</h2>
+            <p>I predict that if we use a large solo cup filled with 75% water as the launch cup and place the target cup 5 cm away from the launch cup, it will be optimal for the challenge. This is because I think by filling it up to the 75% mark, it requires less distance to launch out of the cup. I think placing it 5cm away would be optimal because we might blow the cup a bit too hard.</p>
+            <h2>Procedures</h2>
+            <button onClick="showProcedure()">Click to Show Flowchart</button>
+            <div id="flowchart">
+              <img src="/imgs/cup-challenge-flowchart">
+            </div>
+            <h2>Observation</h2>
+            <ul>
+              <li>Tests with water at 50% were conducted first, then tests with water at 75%.</li>
+              <li>Tests with distance at 1 cm were conducted first, then test with distance at 5 cm.</li>
+              <li>Each time a cup is successfully blown out of the launch cup, a small amount water from the launch cup is also ejected</li>
+            </ul>
+          </div>
+     </body>
+  <script>
+    function showProcedure() {
+    var x = document.getElementById("flowchart");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+} 
+  </script>
+</html>
