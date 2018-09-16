@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,800');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700');
+@media screen and (min-width: 0px) and (max-width: 700px) {
+	#div-mobile {    display: block;  }
+    #div-desktop {    display: none;  }
+}
+@media screen and (min-width: 701px) and (max-width: 3000px) {
+	#div-mobile {    display: none;  }
+	#div-desktop {    display: block;  }
+}
+body {
+  font-family:Dosis;
+  margin:0;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+} 
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #A006FF; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #8604d6; 
+}
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #A006FF;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-right: 20px;
+}
+.navbar li{
+  float: right;
+}
+.navbar li a {
+  display: block;
+  color:white;
+  text-align:center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar li a:hover:not(.active) {
+    background-color: #8604d6;
+}
+
+.navbar.active {
+    background-color: #8604d6;
+}
+.backbutton {
+  float: right;
+}
+.header {
+  height:400px;
+  background: #fff url('../images/header.png');
+}
+.header h2 {
+  text-align: center;
+  padding:170px 0px 0px 0px;
+  font-weight: 800;
+  font-size: 48px;
+  color: #fff;
+}
+.content {
+  font-family:Source Sans Pro;
+  background: #fffdf9;
+  padding: 5% 15% 5% 15%;
+}
+.content h1,h2,h3,h4,h5,h6 {
+  font-weight: 300;
+}
+
+.content h1 {
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 50px;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 30px;
+  line-height: 40px;
+  margin-top: 0;
+}
+
+.content h3 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+.content h4 {
+  color: #505050;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.content p {
+  color: #757575;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 29px;
+  letter-spacing: 0.5px;
+}
+.staffgrid html {
+  box-sizing: border-box;
+}
+
+.staffgrid *, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.staffgrid .column {
+  float: left;
+  width: 200px;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.staffgrid @media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.staffgrid .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 313.89px;
+}
+
+.staffgrid .container {
+  padding: 0 16px;
+}
+
+.staffgrid .container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.staffgrid .title {
+  color: grey;
+}
+
+.staffgrid .button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.staffgrid .button:hover {
+  background-color: #555;
+}
+
