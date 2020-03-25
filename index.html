@@ -46,6 +46,21 @@ button {
 #theme2 {
 	display: none;
 }
+#container {
+    width: 300px;
+    margin: auto;
+}
+#first {
+    width: 100px;
+    float: left;
+}
+#second {
+    width: 100px;
+    float: left;
+}
+#clear {
+    clear: both;
+}
 </style>
 <script>
 function loadImgs() {
@@ -119,11 +134,25 @@ function loadImgs() {
 	document.getElementById("image1").src = "images" + "/" + imgName + ".jpg";
 }
 window.onload = loadImgs;
+var c = 0;
+function myCounter() {
+	++c;
+	var min = Math.floor(c/60);
+	var sec = c%60;
+  document.getElementById("demo").innerHTML = min.toString() +" : " + sec.toString();
+}
 </script>
 <h1>BI Español Oral <span>2020</span></h1>
 <br>
 <h2>(para cambiar los fotos, recarga la pagina)</h2>
 <p>se recomienda que te grabes</p>
+<p id="demo">Click Start to Begin</p>
+<div id="container">
+    <div id="first"></div>
+    <button onClick="myTimer = setInterval(myCounter, 1000)">Start</button>
+    <div id="second"></div>
+    <button onClick="clearInterval(myTimer)">Stop</button>
+</div>
 <br>
 <div id='parent_div_1'>
   <div class='child_div_1'>
