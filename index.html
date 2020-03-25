@@ -32,56 +32,80 @@ button {
   width: 100%;
   height: 50%;
   margin-right: 10px;
-  margin-left:4.8%;
+  margin-left:25%;
   float: left;
 }
 .child_div_1, .child_div_2 {
   float: left;
-  width: 45%;
+  width: 50%;
   margin-right: 5px;
+}
+#theme2 {
+	display: none;
 }
 </style>
 <script>
 function loadImgs() {
 	var topic0 = ["Lengua e identidad", "Los estilos de vida", "Principios y valores", "Subculturas", "Costumbres y tradiciones", "Historias de vida", "Ritos de paso", "Vacaciones y viajes", "La comunidad", "Relaciones sociales", "Expresiones artisticas"]
-	var topic1 = ["Los estilos de vida", "Salud y bienestar", "Actividades de ocio", "La comunidad", "Relaciones sociales", "Communicacion y medios", "Tecnologia"]
-	var topic2 = ["Los estilos de vida", "Salud y bienestar", "Subculturas", "Actividades de ocio", "Costumbres y tradiciones", "Historias de vida", "Vacaciones y viajes", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Entetenimiento"]
-	var topic3 = ["Principios y valores", "La globalizacion", "La igualdad", "Paz y conflicto", "Historias de vida", "Migracion", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden", "Relaciones sociales", "Communicacion y medios"]
-	var topic4 = ["Lengua e identidad", "La globalizacion", "La igualdad", "Paz y conflicto", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden", "Relaciones sociales", "Communicacion y medios"]
-	var topic5 = ["Principios y valores", "La globalizacion", "La igualdad", "Paz y conflicto", "Historias de vida", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden"]
-	var topic6 = ["Lengua e identidad", "Los estilos de vida", "Principios y valores", "La igualdad", "Paz y conflicto", "Costumbres y tradiciones", "Ritos de paso", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden", "Relaciones sociales", "Communicacion y medios", "Expresiones artisticas"]
+	var topic1 = ["Lengua e identidad", "Los estilos de vida", "Principios y valores", "La igualdad", "Paz y conflicto", "Costumbres y tradiciones", "Ritos de paso", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden", "Relaciones sociales", "Communicacion y medios", "Expresiones artisticas"]
+	var topic2 = ["Los estilos de vida", "Salud y bienestar", "Actividades de ocio", "La comunidad", "Relaciones sociales", "Communicacion y medios", "Tecnologia"]
+	var topic3 = ["Los estilos de vida", "Salud y bienestar", "Subculturas", "Actividades de ocio", "Costumbres y tradiciones", "Historias de vida", "Vacaciones y viajes", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Entetenimiento"]
+	var topic4 = ["Principios y valores", "La globalizacion", "La igualdad", "Paz y conflicto", "Historias de vida", "Migracion", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden", "Relaciones sociales", "Communicacion y medios"]
+	var topic5 = ["Lengua e identidad", "La globalizacion", "La igualdad", "Paz y conflicto", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden", "Relaciones sociales", "Communicacion y medios"] 
+	var topic6 = ["Principios y valores", "La globalizacion", "La igualdad", "Paz y conflicto", "Historias de vida", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden"]
 	var topic = Math.floor(Math.random() * Math.floor(6));
 	var variant = Math.floor(Math.random() * Math.floor(4));
 	var theme11	
 	var theme12
 	switch (topic) {
 		case 0:
-		theme11 = topic0[Math.floor(Math.random() * Math.floor(11))];
-		theme12 = topic0[Math.floor(Math.random() * Math.floor(11))];
+		theme11id = Math.floor(Math.random() * Math.floor(11))
+		theme11 = topic0[theme11id];
+		topic0.splice(theme11id, 1)
+		theme12id = Math.floor(Math.random() * Math.floor(10))
+		theme12 = topic0[theme12id];
 		break;
 		case 1:
-		theme11 = topic1[Math.floor(Math.random() * Math.floor(7))];
-		theme12 = topic1[Math.floor(Math.random() * Math.floor(7))];
+		theme11id = Math.floor(Math.random() * Math.floor(14))
+		theme11 = topic1[theme11id];
+		topic1.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(13))
+		theme12 = topic1[theme12id];
 		break;
 		case 2:
-		theme11 = topic2[Math.floor(Math.random() * Math.floor(11))];
-		theme12 = topic2[Math.floor(Math.random() * Math.floor(11))];
+		theme11id = Math.floor(Math.random() * Math.floor(7))
+		theme11 = topic2[theme11id];
+		topic2.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(6))
+		theme12 = topic2[theme12id];
 		break;
 		case 3:
-		theme11 = topic3[Math.floor(Math.random() * Math.floor(12))];
-		theme12 = topic3[Math.floor(Math.random() * Math.floor(12))];
+		theme11id = Math.floor(Math.random() * Math.floor(11))
+		theme11 = topic3[theme11id];
+		topic3.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(10))
+		theme12 = topic3[theme12id];
 		break;
 		case 4:
-		theme11 = topic4[Math.floor(Math.random() * Math.floor(10))];
-		theme12 = topic4[Math.floor(Math.random() * Math.floor(10))];
+		theme11id = Math.floor(Math.random() * Math.floor(12))
+		theme11 = topic4[theme11id];
+		topic4.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(11))
+		theme12 = topic4[theme12id];
 		break;
 		case 5:
-		theme11 = topic5[Math.floor(Math.random() * Math.floor(9))];
-		theme12 = topic5[Math.floor(Math.random() * Math.floor(9))];
+		theme11id = Math.floor(Math.random() * Math.floor(10))
+		theme11 = topic5[theme11id];
+		topic5.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(9))
+		theme12 = topic5[theme12id];
 		break;
 		case 6:
-		theme11 = topic6[Math.floor(Math.random() * Math.floor(14))];
-		theme12 = topic6[Math.floor(Math.random() * Math.floor(14))];
+		theme11id = Math.floor(Math.random() * Math.floor(9))
+		theme11 = topic6[theme11id];
+		topic6.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(8))
+		theme12 = topic6[theme12id];
 		break;
 		default:
 		break;
@@ -90,63 +114,18 @@ function loadImgs() {
 	document.getElementById("tema1-1").innerHTML = theme11;
 	document.getElementById("tema1-2").innerHTML = theme12;
 	document.getElementById("image1").src = "images" + "/" + imgName + ".jpg";
-	var topic = Math.floor(Math.random() * Math.floor(6));
-	var variant = Math.floor(Math.random() * Math.floor(4));
-	var theme21
-	var theme22
-	switch (topic) {
-		case 0:
-		theme21 = topic0[Math.floor(Math.random() * Math.floor(11))];
-		theme22 = topic0[Math.floor(Math.random() * Math.floor(11))];
-		break;
-		case 1:
-		theme21 = topic1[Math.floor(Math.random() * Math.floor(7))];
-		theme22 = topic1[Math.floor(Math.random() * Math.floor(7))];
-		break;
-		case 2:
-		theme21 = topic2[Math.floor(Math.random() * Math.floor(11))];
-		theme22 = topic2[Math.floor(Math.random() * Math.floor(11))];
-		break;
-		case 3:
-		theme21 = topic3[Math.floor(Math.random() * Math.floor(12))];
-		theme22 = topic3[Math.floor(Math.random() * Math.floor(12))];
-		break;
-		case 4:
-		theme21 = topic4[Math.floor(Math.random() * Math.floor(10))];
-		theme22 = topic4[Math.floor(Math.random() * Math.floor(10))];
-		break;
-		case 5:
-		theme21 = topic5[Math.floor(Math.random() * Math.floor(9))];
-		theme22 = topic5[Math.floor(Math.random() * Math.floor(9))];
-		break;
-		case 6:
-		theme21 = topic6[Math.floor(Math.random() * Math.floor(14))];
-		theme22 = topic6[Math.floor(Math.random() * Math.floor(14))];
-		break;s
-		default:
-		break;
-	}
-	var imgName = topic.toString() + variant.toString();
-	document.getElementById("image2").src = "images" + "/" + imgName + ".jpg";
-	document.getElementById("tema2-1").innerHTML = theme21 
-	document.getElementById("tema2-2").innerHTML = theme22
 }
 window.onload = loadImgs;
 </script>
-<h1 onload = "randomImg()">BI Español Oral <span>2020</span></h1>
+<h1>BI Español Oral <span>2020</span></h1>
 <br>
-<h2>(elige una foto, se recomienda que te grabes)</h2>
-<p>para cambiar los fotos, recarga la pagina</p>
+<h2>(para cambiar los fotos, recarga la pagina)</h2>
+<p>se recomienda que te grabes</p>
 <br>
 <div id='parent_div_1'>
   <div class='child_div_1'>
   	<img id="image1" src="" width=100%>
-  	<p id="tema1-1" class="tema1"></p>
-	<p id="tema1-2" class="tema2"></p>
-  </div>
-  <div class='child_div_2'>
-  	<img id="image2" src="" width=100%>
-  	<p id="tema2-1" class="tema1"></p>
-	<p id="tema2-2" class="tema2"></p>
+  	<p id="tema1-1"></p>
+	<p id="tema1-2" class="theme2"></p>
   </div>
 </div>
