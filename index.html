@@ -6,8 +6,8 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
 <meta name="viewport" content="width = 1242, height = 2208, user-scalable = yes" />
-<script type="text/javascript" src="../../extras/jquery.min.1.7.js"></script>
-<script type="text/javascript" src="../../extras/modernizr.2.5.3.min.js"></script>
+<script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
 <script>
     $("document").ready( function () {
         alert("Click the page to reveal the hidden pages and click the corners to flip");
@@ -99,9 +99,9 @@ function loadApp() {
 
 yepnope({
 	test : Modernizr.csstransforms,
-	yep: ['../../lib/turn.min.js'],
-	nope: ['../../lib/turn.html4.min.js'],
-	both: ['../../lib/scissor.min.js', 'css/double-page.css'],
+	yep: ['lib/turn.min.js'],
+	nope: ['lib/turn.html4.min.js'],
+	both: ['lib/scissor.min.js', 'css/double-page.css'],
 	complete: loadApp
 });
 </script>
