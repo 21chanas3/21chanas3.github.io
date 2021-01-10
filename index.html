@@ -1,110 +1,163 @@
-<!doctype html>
-<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-<meta name="viewport" content="width = 1242, height = 2208, user-scalable = no" />
-<script type="text/javascript" src="../../extras/jquery.min.1.7.js"></script>
-<script type="text/javascript" src="../../extras/modernizr.2.5.3.min.js"></script>
-<script>
-    $("document").ready( function () {
-        alert("Click the page to reveal the hidden pages and click the corners to flip");
-    }); 
-$(function() {
-  
-$('.pg1').on('click', function() {
-    var $container = $(this);
-    $container.toggleClass('pg1img1 pg1img2')
-});
-
-$('.pg2').on('click', function() {
-    var $container = $(this);
-    $container.toggleClass('pg2img1 pg2img2')
-});
-
-$('.pg3').on('click', function() {
-    var $container = $(this);
-    $container.toggleClass('pg3img1 pg3img2')
-});
-
-$('.pg4').on('click', function() {
-    var $container = $(this);
-    $container.toggleClass('pg4img1 pg4img2')
-});
-
-$('.pg5').on('click', function() {
-    var $container = $(this);
-    $container.toggleClass('pg5img1 pg5img2')
-});
-
-$('.pg6').on('click', function() {
-    var $container = $(this);
-    $container.toggleClass('pg6img1 pg6img2')
-});
-  
-});</script>
-</head>
-<body style="background-color:#000000">
-
-<div class="flipbook-viewport" style="background-color:#000000">
-	<div class="container">
-		<div class="flipbook">
-			<div class="pg1 page pg1img1"></div>
-			<div class="pg2 double pg2img1"></div>
-			<div class="pg3 double pg3img1"></div>
-			<div class="pg4 double pg4img1"></div>
-			<div class="pg5 double pg5img1"></div>
-			<div class="pg6 double pg6img1"></div>
-		</div>
-	</div>
-</div>
-
-
-<script type="text/javascript">
-
-function loadApp() {
-
-	var flipbook = $('.flipbook');
-
- 	// Check if the CSS was already loaded
-	
-	if (flipbook.width()==0 || flipbook.height()==0) {
-		setTimeout(loadApp, 10);
-		return;
-	}
-
-	$('.flipbook .double').scissor();
-
-	// Create the flipbook
-
-	$('.flipbook').turn({
-			// Elevation
-
-			elevation: 50,
-			
-			// Enable gradients
-
-			gradients: true,
-			
-			// Auto center this flipbook
-
-			autoCenter: true
-
-	});
+<style>
+body {
+  padding-top: 80px;
+  text-align: center;
+  font-family: monaco, monospace;
 }
-
-// Load the HTML4 version if there's not CSS transform
-
-yepnope({
-	test : Modernizr.csstransforms,
-	yep: ['../../lib/turn.min.js'],
-	nope: ['../../lib/turn.html4.min.js'],
-	both: ['../../lib/scissor.min.js', 'css/double-page.css'],
-	complete: loadApp
-});
+h1, h2 {
+  display: inline-block;
+  background: #fff;
+}
+h1 {
+  font-size: 30px
+}
+h2 {
+  font-size: 20px;
+}
+span {
+  background: #fd0;
+}
+img {
+	vertical-align: center;
+}
+button {
+  background-color: #fd0; /* Green */
+  border: none;
+  color: black;
+  padding: 7px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: monaco, monospace;
+}
+#parent_div_1, #parent_div_2, #parent_div_3 {
+  width: 75%;
+  height: 50%;
+  margin-right: 10px;
+  margin-left:30%;
+  float: left;
+}
+.child_div_1, .child_div_2 {
+  float: left;
+  width: 50%;
+  margin-right: 5px;
+}
+#theme2 {
+	display: none;
+}
+#container {
+    width: 300px;
+    margin: auto;
+}
+#first {
+    width: 100px;
+    float: left;
+}
+#second {
+    width: 100px;
+    float: left;
+}
+#clear {
+    clear: both;
+}
+</style>
+<script>
+function loadImgs() {
+	var topic0 = ["Lengua e identidad", "Los estilos de vida", "Principios y valores", "Subculturas", "Costumbres y tradiciones", "Historias de vida", "Ritos de paso", "Vacaciones y viajes", "La comunidad", "Relaciones sociales", "Expresiones artisticas"]
+	var topic1 = ["Lengua e identidad", "Los estilos de vida", "Principios y valores", "La igualdad", "Paz y conflicto", "Costumbres y tradiciones", "Ritos de paso", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden", "Relaciones sociales", "Communicacion y medios", "Expresiones artisticas"]
+	var topic2 = ["Los estilos de vida", "Salud y bienestar", "Actividades de ocio", "La comunidad", "Relaciones sociales", "Communicacion y medios", "Tecnologia"]
+	var topic3 = ["Los estilos de vida", "Salud y bienestar", "Subculturas", "Actividades de ocio", "Costumbres y tradiciones", "Historias de vida", "Vacaciones y viajes", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Entetenimiento"]
+	var topic4 = ["Principios y valores", "La globalizacion", "La igualdad", "Paz y conflicto", "Historias de vida", "Migracion", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden", "Relaciones sociales", "Communicacion y medios"]
+	var topic5 = ["Lengua e identidad", "La globalizacion", "La igualdad", "Paz y conflicto", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden", "Relaciones sociales", "Communicacion y medios"] 
+	var topic6 = ["Principios y valores", "La globalizacion", "La igualdad", "Paz y conflicto", "Historias de vida", "Diferencias y desigualdades", "El valor del esfuerzo", "La comunidad", "Ley y orden"]
+	var topic = Math.floor(Math.random() * Math.floor(6));
+	var variant = Math.floor(Math.random() * Math.floor(4));
+	var theme11	
+	var theme12
+	switch (topic) {
+		case 0:
+		theme11id = Math.floor(Math.random() * Math.floor(11))
+		theme11 = topic0[theme11id];
+		topic0.splice(theme11id, 1)
+		theme12id = Math.floor(Math.random() * Math.floor(10))
+		theme12 = topic0[theme12id];
+		break;
+		case 1:
+		theme11id = Math.floor(Math.random() * Math.floor(14))
+		theme11 = topic1[theme11id];
+		topic1.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(13))
+		theme12 = topic1[theme12id];
+		break;
+		case 2:
+		theme11id = Math.floor(Math.random() * Math.floor(7))
+		theme11 = topic2[theme11id];
+		topic2.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(6))
+		theme12 = topic2[theme12id];
+		break;
+		case 3:
+		theme11id = Math.floor(Math.random() * Math.floor(11))
+		theme11 = topic3[theme11id];
+		topic3.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(10))
+		theme12 = topic3[theme12id];
+		break;
+		case 4:
+		theme11id = Math.floor(Math.random() * Math.floor(12))
+		theme11 = topic4[theme11id];
+		topic4.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(11))
+		theme12 = topic4[theme12id];
+		break;
+		case 5:
+		theme11id = Math.floor(Math.random() * Math.floor(10))
+		theme11 = topic5[theme11id];
+		topic5.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(9))
+		theme12 = topic5[theme12id];
+		break;
+		case 6:
+		theme11id = Math.floor(Math.random() * Math.floor(9))
+		theme11 = topic6[theme11id];
+		topic6.splice(theme11id, 1);
+		theme12id = Math.floor(Math.random() * Math.floor(8))
+		theme12 = topic6[theme12id];
+		break;
+		default:
+		break;
+	}
+	var imgName = topic.toString() + variant.toString();
+	document.getElementById("tema1-1").innerHTML = theme11;
+	document.getElementById("tema1-2").innerHTML = theme12;
+	document.getElementById("image1").src = "images" + "/" + imgName + ".jpg";
+}
+window.onload = loadImgs;
+var c = 0;
+function myCounter() {
+	++c;
+	var min = Math.floor(c/60);
+	var sec = c%60;
+  document.getElementById("demo").innerHTML = min.toString() +" : " + sec.toString();
+}
 </script>
-
-</body>
-</html>
+<h1>BI Español Oral <span>2020</span></h1>
+<br>
+<h2>(para cambiar los fotos, recarga la pagina)</h2>
+<p>se recomienda que te grabes</p>
+<p id="demo">Click Start to Begin</p>
+<div id="container">
+    <div id="first"></div>
+    <button onClick="myTimer = setInterval(myCounter, 1000)">Start</button>
+    <div id="second"></div>
+    <button onClick="clearInterval(myTimer)">Stop</button>
+</div>
+<br>
+<div id='parent_div_1'>
+  <div class='child_div_1'>
+  	<img id="image1" src="" width=100%>
+  	<p id="tema1-1"></p>
+	<p id="tema1-2" class="theme2"></p>
+  </div>
+</div>
