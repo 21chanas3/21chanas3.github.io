@@ -29,7 +29,7 @@ html, body {
   display: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .navbar a:not(.active) {display: none;}
   .navbar .active {
     margin: auto;
@@ -43,7 +43,7 @@ html, body {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .navbar.responsive {
     flex-direction: column;
     align-items: center;
@@ -85,7 +85,7 @@ body {
   max-width: 100%;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .content {
     flex: 1;
     padding: 50px 20px 20px 20px;
@@ -128,7 +128,7 @@ body {
   bottom: 0;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .item-topbar {
     flex-direction: column;
   }
