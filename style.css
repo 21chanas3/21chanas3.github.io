@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+} 
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px 40px 20px 40px; /* Add padding to all sides */
+  display: flex;
+  justify-content: space-between; 
+  width: 100%;
+  box-sizing: border-box; /* Include padding in the element's total width */
+  max-width: 100%; /* Prevent overflow */
+  font-weight: 600;
+  font-size: 24px;
+  background-color: #00F;
+  font-family: "Roboto Mono", monospace;
+}
+
+.navbar .icon {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar a:not(.active) {display: none;}
+  .navbar .active {
+    margin: auto;
+  }
+  .navbar a.icon {
+    display: block;
+    position: absolute;
+    text-align: center;
+    right: 40px;
+    top: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navbar.responsive {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar.responsive a:not(.icon) {
+    float: none;
+    display: block;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+    width:100%;
+  }
+}
+
+a.navbar-item {
+  text-decoration: none;
+  color: #fff;
+}
+
+a.navbar-item.active {
+  text-decoration: underline;
+  color: #fff;
+}
+
+body {
+  background-color: #242424; 
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.content {
+  flex: 1;
+  padding: 50px 200px 20px 200px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    flex: 1;
+    padding: 50px 20px 20px 20px;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+}
+
+.footer {
+  padding: 10px;
+  background-color: #333;
+  color: #888;
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px 20px 0px;
+}
+
+.item-topbar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 0;
+  min-height: 30px;
+}
+
+.item-title {
+  font-size: 24px;
+  font-weight: 750;
+  text-decoration: none;
+  color: #fff;
+}
+
+.item-dates {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .item-topbar {
+    flex-direction: column;
+  }
+  
+  .item-dates {
+    position: relative;
+  }
+}
+
+.item-subtitle{
+  font-style: italic;
+}
+
+.item-description {
+  margin: 10px 0px 10px 25px;
+}
